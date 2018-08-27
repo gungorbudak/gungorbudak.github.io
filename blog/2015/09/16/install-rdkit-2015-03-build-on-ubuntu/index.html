@@ -564,14 +564,21 @@ pre { padding: 1rem; }
 <p><strong>Set Environment Variables</strong></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/.bashrc
-<span class="c"># Enter following three lines at the end of .bashrc</span>
-<span class="nb">export </span><span class="nv">RDBASE</span><span class="o">=</span><span class="s2">"/usr/local/rdkit"</span>
-<span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$RDBASE</span><span class="s2">:</span><span class="nv">$PYTHONPATH</span><span class="s2">"</span>
-<span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$RDBASE</span><span class="s2">/lib"</span>
-<span class="nb">source</span> ~/.bashrc
 </code></pre></div></div>
 
-<p><strong>Download InChi API (Optional, remove the arg in the next step if you skip)</strong></p>
+<p>Enter following three lines at the end of .bashrc</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">RDBASE</span><span class="o">=</span><span class="s2">"/usr/local/rdkit"</span>
+<span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$RDBASE</span><span class="s2">:</span><span class="nv">$PYTHONPATH</span><span class="s2">"</span>
+<span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$RDBASE</span><span class="s2">/lib"</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ~/.bashrc
+</code></pre></div></div>
+
+<p><strong>Download InChi API</strong></p>
+
+<p>Optional, remove the argument <code class="highlighter-rouge">-DRDK_BUILD_INCHI_SUPPORT=ON</code> in the next step if you skip.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$RDBASE</span>/External/INCHI-API
 <span class="nb">sudo </span>bash download-inchi.sh
@@ -585,7 +592,7 @@ pre { padding: 1rem; }
 <span class="nb">sudo </span>make <span class="nb">install</span>
 </code></pre></div></div>
 
-<p>Verify</p>
+<p><strong>Verify</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">rdkit</span>
@@ -1833,7 +1840,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-2 text-muted">
-      &copy; <time datetime="2018-08-13T11:25:50+03:00">2018</time>. Güngör Budak
+      &copy; <time datetime="2018-08-27T22:21:34+03:00">2018</time>. Güngör Budak
     </div>
     
   </div>
