@@ -57,21 +57,21 @@ main h3 {
 }
 
 main p {
-    text-align: justify;
+  text-align: justify;
 }
 
 main article a {
-    word-break: break-word;
+  word-break: break-word;
 }
 
 footer {
-    padding-top: 2rem;
-    margin: 3rem 0px 3rem 0px;
-    border-top: 2px solid #00000026;
+  padding-top: 2rem;
+  margin: 3rem 0px 3rem 0px;
+  border-top: 2px solid #00000026;
 }
 
 .nav-pagination {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 @media (min-width: 960px) {
@@ -84,9 +84,9 @@ footer {
 }
 
 .post-share {
-    display: flex;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .post-share a {
@@ -556,7 +556,7 @@ pre { padding: 1rem; }
 
 <p>An example of SVG image generation can be found on <a href="http://rdkit.blogspot.com.tr/2015/02/new-drawing-code.html" target="_blank">RDKit blog post called New Drawing Code</a>.</p>
 
-<p>In [3] shows the SVG image generation and it returns the SVG file content in XML. When you open this file in a text editor, you’ll see there is a rect element with a style attribute having fill #ffffff which is white. If you make this none, the whole SVG background becomes transparent.</p>
+<p>In [3] shows the SVG image generation and it returns the SVG file content in XML. When you open this file in a text editor, you’ll see there is a rect element with a style attribute having fill <code class="highlighter-rouge">#ffffff</code> which is white. If you make this none, the whole SVG background becomes transparent.</p>
 
 <p>So, if you obtain the SVG file content as XML from using moltosvg function in the blog post, just use the following function to make its background transparent.</p>
 
@@ -567,11 +567,11 @@ pre { padding: 1rem; }
     <span class="c"># Make the white background transparent</span>
     <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
     <span class="n">rect</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'rect'</span><span class="p">)</span>
-    <span class="n">rect</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'style'</span><span class="p">,</span> <span class="n">rect</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'style'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'#ffffff'</span><span class="p">,</span> <span class="s">'none'</span><span class="p">))</span><span class="o">&lt;</span>
+    <span class="n">rect</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'style'</span><span class="p">,</span> <span class="n">rect</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'style'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'#ffffff'</span><span class="p">,</span> <span class="s">'none'</span><span class="p">))</span>
     <span class="c"># Recover some missing attributes for correct browser rendering</span>
     <span class="n">tree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'version'</span><span class="p">,</span> <span class="s">'1.1'</span><span class="p">)</span>
     <span class="n">tree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'xmlns'</span><span class="p">,</span> <span class="s">'http://www.w3.org/2000/svg'</span><span class="p">)</span>
-    <span class="n">ree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'xmlns:rdkit'</span><span class="p">,</span> <span class="s">'http://www.rdkit.org/xml'</span><span class="p">)</span>
+    <span class="n">tree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'xmlns:rdkit'</span><span class="p">,</span> <span class="s">'http://www.rdkit.org/xml'</span><span class="p">)</span>
     <span class="n">tree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'xmlns:xlink'</span><span class="p">,</span> <span class="s">'http://www.w3.org/1999/xlink'</span><span class="p">)</span>
     <span class="k">return</span> <span class="s">'&lt;?xml version="1.0" encoding="UTF-8"?&gt;'</span> <span class="o">+</span> <span class="n">ET</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 </code></pre></div></div>
@@ -603,23 +603,23 @@ pre { padding: 1rem; }
 </div>
 
     
-    <hr class="half-rule">
-    <h3>Questions?</h3>
-    <p class="text-muted">Please start a discussion down below or <a href="/contact/" target="_blank">send me an email</a>!</p>
-    <div id="disqus_thread" class="comments"></div>
-    <script>
-        var disqus_config = function () {
-            this.page.url = 'https://www.gungorbudak.com/blog/2015/09/16/generating-2d-svg-images-of-mol-files/';
-            this.page.identifier = "blog-2015-09-16-generating-2d-svg-images-of-mol-files";
-        };
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://gungorbudak.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <hr class="half-rule">
+  <h3>Questions?</h3>
+  <p class="text-muted">Please start a discussion down below or <a href="/contact/" target="_blank">send me an email</a>!</p>
+  <div id="disqus_thread" class="comments"></div>
+  <script>
+      var disqus_config = function () {
+          this.page.url = 'https://www.gungorbudak.com/blog/2015/09/16/generating-2d-svg-images-of-mol-files/';
+          this.page.identifier = "blog-2015-09-16-generating-2d-svg-images-of-mol-files";
+      };
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://gungorbudak.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
     <!-- gungorbudakcom-blog-second-2 -->
@@ -1814,7 +1814,7 @@ pre { padding: 1rem; }
           <a class="nav-link" href="https://github.com/gungorbudak" title="Güngör Budak GitHub" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://www.linkedin.com/in/gungorbudak" title="Güngör Budak LinkedIn" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a class="nav-link" href="https://www.linkedin.com/in/gungorbudak" title="Güngör Budak LinkedIn" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://twitter.com/gungorbudak" title="Güngör Budak Twitter" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a>
@@ -1823,7 +1823,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2018-08-28T11:53:39+03:00">2018</time>. Güngör Budak
+      &copy; <time datetime="2018-08-30T10:58:49+03:00">2018</time>. Güngör Budak
     </div>
     
   </div>
