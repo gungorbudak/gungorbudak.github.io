@@ -593,6 +593,10 @@
 <lastmod>2018-08-07T10:00:00+03:00</lastmod>
 </url>
 <url>
+<loc>https://www.gungorbudak.com/blog/2018/09/11/mongodb-listing-database-collections-tables-with-number-of-records-rows/</loc>
+<lastmod>2018-09-11T11:00:00+03:00</lastmod>
+</url>
+<url>
 <loc>https://www.gungorbudak.com/about/</loc>
 </url>
 <url>
@@ -2402,6 +2406,15 @@
 <loc>https://www.gungorbudak.com/blog/tag/entrez-id/</loc>
 </url>
 <url>
+<loc>https://www.gungorbudak.com/blog/tag/mongo/</loc>
+</url>
+<url>
+<loc>https://www.gungorbudak.com/blog/tag/mongodb/</loc>
+</url>
+<url>
+<loc>https://www.gungorbudak.com/blog/tag/nosql/</loc>
+</url>
+<url>
 <loc>https://www.gungorbudak.com/blog/archive/2012/</loc>
 </url>
 <url>
@@ -2469,6 +2482,6 @@
 </url>
 <url>
 <loc>https://www.gungorbudak.com/public/Gungor-Budak-CV.pdf</loc>
-<lastmod>2018-09-06T12:04:30+03:00</lastmod>
+<lastmod>2018-09-11T16:38:03+03:00</lastmod>
 </url>
 </urlset>
