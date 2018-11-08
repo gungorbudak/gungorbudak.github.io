@@ -222,6 +222,10 @@ footer {
   background-color: #ff4000;
 }
 
+.gsc-result .gs-title {
+    height: 1.5em !important;
+}
+
 /* Code Highlighting */
 
 pre { padding: 1rem; }
@@ -660,6 +664,23 @@ python ../manage.py compilemessages
     </div>
   </div>
 </form>
+<script type="text/javascript">
+  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var q = document.querySelector('input[name="q"]').value;
+    if (q.length > 0) {
+      window.open('/blog/search/#gsc.q=' + q, '_self');
+    }
+  });
+  if (window.location.hash.length > 0) {
+    var q = window.location.hash.substring(1).split('&').filter(function(v) {
+      return v.substring(0, 6) === 'gsc.q=';
+    })[0].substring(6);
+    if (q.length > 0) {
+      document.querySelector('input[name="q"]').value = q;
+    }
+  }
+</script>
 
     </section>
 
@@ -1838,7 +1859,7 @@ python ../manage.py compilemessages
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2018-11-08T21:34:30+03:00">2018</time>. Güngör Budak
+      &copy; <time datetime="2018-11-08T22:27:40+03:00">2018</time>. Güngör Budak
     </div>
     
   </div>

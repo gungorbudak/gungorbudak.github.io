@@ -222,6 +222,10 @@ footer {
   background-color: #ff4000;
 }
 
+.gsc-result .gs-title {
+    height: 1.5em !important;
+}
+
 /* Code Highlighting */
 
 pre { padding: 1rem; }
@@ -525,7 +529,7 @@ pre { padding: 1rem; }
     </div>
 </div>
 
-<h2 class="text-center">
+<h2 class="text-center mb-5">
   Search Results
 </h2>
 
@@ -541,7 +545,47 @@ pre { padding: 1rem; }
   })();
 </script>
 
-<gcse:search></gcse:search>
+<form method="get" action="/blog/search/" class="blog-search-form">
+  <div class="input-group">
+    <input type="text" class="form-control" name="q" placeholder="Search this blog" />
+    <div class="input-group-append">
+      <button class="btn btn-secondary" title="Search this blog" type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+<script type="text/javascript">
+  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var q = document.querySelector('input[name="q"]').value;
+    if (q.length > 0) {
+      window.open('/blog/search/#gsc.q=' + q, '_self');
+    }
+  });
+  if (window.location.hash.length > 0) {
+    var q = window.location.hash.substring(1).split('&').filter(function(v) {
+      return v.substring(0, 6) === 'gsc.q=';
+    })[0].substring(6);
+    if (q.length > 0) {
+      document.querySelector('input[name="q"]').value = q;
+    }
+  }
+</script>
+
+<script>
+  (function() {
+    var cx = 'partner-pub-3172715384615423:9160510939';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<gcse:searchresults-only></gcse:searchresults-only>
 
       </main>
       <footer>
@@ -562,7 +606,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2018-11-08T21:34:30+03:00">2018</time>. Güngör Budak
+      &copy; <time datetime="2018-11-08T22:27:40+03:00">2018</time>. Güngör Budak
     </div>
     
   </div>
