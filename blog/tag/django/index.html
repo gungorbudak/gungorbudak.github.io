@@ -57,6 +57,11 @@ header {
 
 .navbar-light .navbar-nav .nav-link {
     font-size: 1rem;
+    text-align: right;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 500;
 }
 
 main h3 {
@@ -481,36 +486,43 @@ pre { padding: 1rem; }
         
             <li class="nav-item">
             <a class="nav-link btn btn-sm btn-link" href="/">
-              <i class="fas fa-home"></i> Home
+              <!-- <i class="fas fa-home"></i>  -->Home
             </a>
           </li>
         
             <li class="nav-item">
             <a class="nav-link btn btn-sm btn-link" href="/about/">
-              <i class="fas fa-trophy"></i> About
+              <!-- <i class="fas fa-trophy"></i>  -->About
             </a>
           </li>
         
             <li class="nav-item">
             <a class="nav-link btn btn-sm btn-link" href="/research/">
-              <i class="fas fa-flask"></i> Research
+              <!-- <i class="fas fa-flask"></i>  -->Research
             </a>
           </li>
         
-            <li class="nav-item active">
-            <a class="nav-link btn btn-sm btn-link" href="/blog/">
-              <i class="fas fa-rss-square"></i> Blog
+            <li class="nav-item">
+            <a class="nav-link btn btn-sm btn-link active" href="/blog/">
+              <!-- <i class="fas fa-rss-square"></i>  -->Blog
             </a>
           </li>
         
             <li class="nav-item">
             <a class="nav-link btn btn-sm btn-link" href="/contact/">
-              <i class="fas fa-envelope"></i> Contact
+              <!-- <i class="fas fa-envelope"></i>  -->Contact
             </a>
           </li>
         
         <!-- /menu -->
         <!-- language switcher -->
+
+        
+        <li class="nav-item">
+          <a class="nav-link btn btn-sm btn-link disabled" href="#">
+            <!-- <i class="fas fa-language"></i>  -->Türkçe
+          </a>
+        </li>
         
         <!-- /language switcher -->
       </ul>
@@ -1899,7 +1911,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2018-11-22T00:14:54+03:00">2018</time>. Güngör Budak
+      &copy; <time datetime="2018-12-02T15:30:44+03:00">2018</time>. Güngör Budak
     </div>
     
   </div>
