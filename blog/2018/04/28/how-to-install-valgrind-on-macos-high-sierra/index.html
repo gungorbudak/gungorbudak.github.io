@@ -591,14 +591,14 @@ pre { padding: 1rem; }
 
 <p>So, when you try installing right away, you may get the following error:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install </span>valgrind
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>valgrind
 valgrind: This formula either does not compile or <span class="k">function </span>as expected on macOS
 versions newer than Sierra due to an upstream incompatibility.
 </code></pre></div></div>
 
 <p>1. To correctly install it, first, type the following command at the Terminal (which opens Valgrind’s formulae)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew edit valgrind
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew edit valgrind
 </code></pre></div></div>
 
 <p>And change the URL in <code class="highlighter-rouge">head</code> section</p>
@@ -615,12 +615,12 @@ versions newer than Sierra due to an upstream incompatibility.
 
 <p>2. Do an update for Homebrew:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew update
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew update
 </code></pre></div></div>
 
 <p>3. Finally, use the following command to install Valgrind from the <code class="highlighter-rouge">HEAD</code>:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install</span> <span class="nt">--HEAD</span> valgrind
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install</span> <span class="nt">--HEAD</span> valgrind
 </code></pre></div></div>
 
 <p><a href="https://github.com/Homebrew/homebrew-core/issues/18998" target="_blank">Solution from this post</a>.</p>
@@ -1458,7 +1458,7 @@ versions newer than Sierra due to an upstream incompatibility.
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-02-13T17:08:07+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2019-03-11T12:08:18+03:00">2019</time>. Güngör Budak
     </div>
     
   </div>
