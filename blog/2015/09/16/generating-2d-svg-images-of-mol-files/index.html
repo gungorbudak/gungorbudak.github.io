@@ -598,12 +598,12 @@ pre { padding: 1rem; }
 
 
 <span class="k">def</span> <span class="nf">transparentsvg</span><span class="p">(</span><span class="n">svg</span><span class="p">):</span>
-    <span class="c"># Make the white background transparent</span>
-    <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
+    <span class="c1"># Make the white background transparent
+</span>    <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">svg</span><span class="p">)</span>
     <span class="n">rect</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'rect'</span><span class="p">)</span>
     <span class="n">rect</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'style'</span><span class="p">,</span> <span class="n">rect</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'style'</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'#ffffff'</span><span class="p">,</span> <span class="s">'none'</span><span class="p">))</span>
-    <span class="c"># Recover some missing attributes for correct browser rendering</span>
-    <span class="n">tree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'version'</span><span class="p">,</span> <span class="s">'1.1'</span><span class="p">)</span>
+    <span class="c1"># Recover some missing attributes for correct browser rendering
+</span>    <span class="n">tree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'version'</span><span class="p">,</span> <span class="s">'1.1'</span><span class="p">)</span>
     <span class="n">tree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'xmlns'</span><span class="p">,</span> <span class="s">'http://www.w3.org/2000/svg'</span><span class="p">)</span>
     <span class="n">tree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'xmlns:rdkit'</span><span class="p">,</span> <span class="s">'http://www.rdkit.org/xml'</span><span class="p">)</span>
     <span class="n">tree</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'xmlns:xlink'</span><span class="p">,</span> <span class="s">'http://www.w3.org/1999/xlink'</span><span class="p">)</span>
@@ -704,6 +704,15 @@ pre { padding: 1rem; }
         <ul class="sidebar-list">
     
         <li>
+            <a href="/blog/2019/04/26/how-to-make-a-customizable-google-custom-search-engine-box/">How to Make a Customizable Google Custom Search Engine Box</a>
+            <br>
+            <span class="text-muted">
+              <i class="far fa-calendar-alt"></i>
+              Fri, Apr 26, 2019
+            </span>
+        </li>
+    
+        <li>
             <a href="/blog/2018/12/12/bootstrap-4-search-box-with-search-icon/">Bootstrap 4 Search Box with Search Icon</a>
             <br>
             <span class="text-muted">
@@ -739,15 +748,6 @@ pre { padding: 1rem; }
             </span>
         </li>
     
-        <li>
-            <a href="/blog/2018/08/07/convert-gene-symbols-to-entrez-ids-in-r/">Convert Gene Symbols to Entrez IDs in R</a>
-            <br>
-            <span class="text-muted">
-              <i class="far fa-calendar-alt"></i>
-              Tue, Aug 7, 2018
-            </span>
-        </li>
-    
 </ul>
 
     </section>
@@ -767,6 +767,10 @@ pre { padding: 1rem; }
       <h5 class="sidebar-title text-muted">Archives</h5>
       
       <ul class="sidebar-list">
+      
+        <li>
+          <a href="/blog/archive/2019/">2019</a> (1)
+        </li>
       
         <li>
           <a href="/blog/archive/2018/">2018</a> (12)
@@ -1450,7 +1454,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-03-19T19:16:40+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2019-04-26T18:19:42+03:00">2019</time>. Güngör Budak
     </div>
     
   </div>
