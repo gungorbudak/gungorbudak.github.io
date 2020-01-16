@@ -593,9 +593,9 @@ pre { padding: 1rem; }
   <a class="btn btn-sm btn-social btn-hn" href="https://news.ycombinator.com/submitlink?u=https://www.gungorbudak.com/blog/2019/04/26/how-to-make-a-customizable-google-custom-search-engine-box/&t=How to Make a Customizable Google Custom Search Engine Box" target="_blank" title="Share this post on Hacker News"><i class="fab fa-hacker-news" data-fa-transform="grow-4"></i></a>
 </div>
 
-      <p>Google Custom Search Engine is a great service when you have to implement a search functionality to as website and do not spend too much time. However, the default way of implementing it restricting us to have a certain search box design that might not blend well to our website. In this post, I’ll show how I found a workaround solution and actually implement on this very blog.</p>
+      <p>Google Custom Search Engine (CSE) is a great service when you need to implement a search functionality to a website and do not spend too much time. However, the default way of implementing it restricting us to have a certain search box design that might not blend well to our website. In this post, I’ll show how I found a workaround solution and actually implement on this very blog.</p>
 
-<p>To see the solution in action, feel free to search anything on the search box at the top of the right sidebar. :) This solution will require some JavaScript knowledge but if you don’t know you’ll understand and be able to implement yourself anyway. No jQuery required, by the way.</p>
+<p>To see the solution in action, feel free to search anything on the search box at the top of the right sidebar. :)</p>
 
 <p class="text-center"><a href="/public/images/customized-google-cse-box.png" target="_blank"><img src="/public/images/customized-google-cse-box.png" alt="Customized Google CSE Box" class="img-fluid" /></a>
 <em>Customized Google CSE Box</em></p>
@@ -603,22 +603,22 @@ pre { padding: 1rem; }
 <p class="text-center"><a href="/public/images/customized-google-cse-box.png" target="_blank"><img src="/public/images/customized-google-cse-results.png" alt="Customized Google CSE Results" class="img-fluid" /></a>
 <em>Customized Google CSE Results for “django” search</em></p>
 
+<p>Google recently (2019) changed CSE in a way that know it is more powerful and allows to send queries directly with a search string (i.e. <code class="highlighter-rouge">?q=search-text</code> at the end of the URL); however, for this to work you need to create a new search engine. The old ones have to use hash string (i.e. <code class="highlighter-rouge">#qsc.q=search-text</code> at the end of the URL). I updated the search engine in my website for search string version as it is cleaner and I’m primarily explaining that one but I’ll share the methods for hash version at the end. Only difference is the hash string version requires JavaScript.</p>
+
 <p><strong>1. Get Google CSE code and make a results page</strong></p>
 
-<p>I’ll skip how to go and register you website to Google Custom Search 
-Engine. Use <a href="https://support.google.com/customsearch/answer/4513751?hl=en" target="_blank">the official Custom Search Engine guide here</a> to do it. What you need is;</p>
+<p>I’ll skip how to go and create a Google Custom Search Engine for your website. Use <a href="https://support.google.com/customsearch/answer/4513751?hl=en" target="_blank">the official Custom Search Engine guide here</a> to do it. Briefly go to <a href="https://cse.google.com/cse/all" target="_blank">Google CSE website</a>, hit create new button, put your website URL, and you’re done. All other customizations are up to you and depend on how you want to show your search results. What you need is to get the HTML code for placing search results to a page from Google Custom Search Engine service, say it’s <code class="highlighter-rouge">example.com/search.html</code> for you. It will look something like this;</p>
 
-<ul>
-  <li>Get the HTML code for placing search results to a page from Google Custom Search Engine service, say it’s <code class="highlighter-rouge">example.com/search.html</code> for you.</li>
-  <li>Use below JavaScript code and minimal search box form to search anywhere and get the results on <code class="highlighter-rouge">example.com/search.html</code></li>
-</ul>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">async</span> <span class="na">src=</span><span class="s">"https://cse.google.com/cse.js?cx=YOUR_CSE_ID"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"gcse-searchresults-only"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
 
-<p><strong>2. Place the search box form and required JavaScript to any page you want</strong></p>
+<p><strong>2. Place the search box form to any page you want</strong></p>
 
 <p>Below find a minimal <code class="highlighter-rouge">input</code> tag in a <code class="highlighter-rouge">form</code>, I’m also putting a <code class="highlighter-rouge">button</code> but typing search query and hitting <code class="highlighter-rouge">Enter</code> will work fine.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- minimal &amp; customizable Google CSE search box form --&gt;</span>
-<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"search-form"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"get"</span> <span class="na">action=</span><span class="s">"/search.html"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"q"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
@@ -627,9 +627,39 @@ Engine. Use <a href="https://support.google.com/customsearch/answer/4513751?hl=e
 <p>You can add styles, classes, a placeholder, anything. Below are the minimal requirements:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">class="search-form"</code> on <code class="highlighter-rouge">form</code> so we can refer to it using JavaScript</li>
-  <li><code class="highlighter-rouge">name="q"</code> on <code class="highlighter-rouge">input</code> so we can get the search query value using JavaScript</li>
+  <li><code class="highlighter-rouge">action="/search.html"</code> on <code class="highlighter-rouge">form</code> so browser will redirect user to correct place for search results, use your search results page if it is different</li>
+  <li><code class="highlighter-rouge">name="q"</code> on <code class="highlighter-rouge">input</code> so Google CSE (default is <code class="highlighter-rouge">q</code>, it is configurable but keep it as <code class="highlighter-rouge">q</code> if you don’t have to) knows what you are searching for</li>
 </ul>
+
+<p><strong>Optional JavaScript code for showing searched text in the search box</strong></p>
+
+<p>If you want to keep the searched text at the search box while showing search results (just a feedback for user) such as in my website you may use below code.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// check if there is any text in the search string</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// retrieve the "q" keyed search string value</span>
+  <span class="kd">var</span> <span class="nx">q</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">&amp;</span><span class="dl">'</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">q=</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">})[</span><span class="mi">0</span><span class="p">].</span><span class="nx">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+  <span class="c1">// put the value to the search box if it is not empty</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">q</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">input[name="q"]</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">q</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Hash version changes</strong></p>
+
+<p>The HTML part now includes a class name and doesn’t have <code class="highlighter-rouge">get</code> and <code class="highlighter-rouge">action</code> as now we do not rely on the browser redirection and JavaScript will redirect.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- minimal &amp; customizable Google CSE search box form --&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"search-form"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"q"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p>The JavaScript code with must part is responsible for opening the search results page.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// JavaScript code that should follow the search box code</span>
   
@@ -677,7 +707,7 @@ Engine. Use <a href="https://support.google.com/customsearch/answer/4513751?hl=e
 <p>Note that:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">/search.html</code> part in <code class="highlighter-rouge">window.open()</code> is assumed for this guide. You should change the JavaScript code accordingly. For example it’s <code class="highlighter-rouge">/blog/search/</code> for my website</li>
+  <li><code class="highlighter-rouge">/search.html</code> is assumed for this guide. You should change the code accordingly. For example it’s <code class="highlighter-rouge">/blog/search/</code> for my website</li>
   <li>This JavaScript code should be put anywhere the search box form is placed. Also, place the JavaScript code below the form so it is loaded beforehand</li>
 </ul>
 
@@ -1514,7 +1544,7 @@ Engine. Use <a href="https://support.google.com/customsearch/answer/4513751?hl=e
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2020-01-16T11:41:18+03:00">2020</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T14:21:24+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>
