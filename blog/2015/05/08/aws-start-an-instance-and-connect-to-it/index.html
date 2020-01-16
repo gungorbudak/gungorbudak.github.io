@@ -464,6 +464,7 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
 </head>
 
   <body>
@@ -670,18 +671,12 @@ pre { padding: 1rem; }
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
@@ -1445,7 +1440,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>

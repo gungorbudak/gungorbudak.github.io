@@ -464,6 +464,7 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
 </head>
 
   <body>
@@ -595,14 +596,14 @@ pre { padding: 1rem; }
 <p>First, let’s create a registry to be able to use adaptors:</p>
 
 <div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">Bio::EnsEMBL::</span><span class="nv">Registry</span><span class="p">;</span>
-<span class="k">my</span> <span class="nv">$registry</span> <span class="o">=</span> <span class="s">"Bio::EnsEMBL::Registry"</span><span class="p">;</span>
-<span class="nv">$registry</span><span class="o">-&gt;</span><span class="nv">load_registry_from_db</span><span class="p">(</span><span class="o">-</span><span class="nv">host</span> <span class="o">=&gt;</span> <span class="s">'ensembldb.ensembl.org'</span><span class="p">,</span> <span class="o">-</span><span class="nv">user</span> <span class="o">=&gt;</span> <span class="s">'anonymous'</span><span class="p">);</span>
+<span class="k">my</span> <span class="nv">$registry</span> <span class="o">=</span> <span class="p">"</span><span class="s2">Bio::EnsEMBL::Registry</span><span class="p">";</span>
+<span class="nv">$registry</span><span class="o">-&gt;</span><span class="nv">load_registry_from_db</span><span class="p">(</span><span class="o">-</span><span class="nv">host</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">ensembldb.ensembl.org</span><span class="p">',</span> <span class="o">-</span><span class="nv">user</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">anonymous</span><span class="p">');</span>
 </code></pre></div></div>
 
 <p>Basically, in this API (specifically <a href="http://www.ensembl.org/info/docs/Doxygen/core-api/index.html" target="_blank">Ensembl core database API</a>) we have “adaptors” (of genes, transcripts, …) and “objects” (of genes, transcripts, …). Adaptors are used to retrieve objects from Ensembl database. So, if you want to get a gene (object) information, first you have to generate a gene adaptor. Then, using “fetch_by_stable_id” method passing an argument as Ensembl gene ID (e.g. <a href="http://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000198590;r=3:37427760-37476988" target="_blank">ENSG00000198590</a>) gene object is obtained.</p>
 
-<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">my</span> <span class="nv">$gene_adaptor</span> <span class="o">=</span> <span class="nv">$registry</span><span class="o">-&gt;</span><span class="nv">get_adaptor</span><span class="p">(</span><span class="s">'Homo sapiens'</span><span class="p">,</span> <span class="s">'Core'</span><span class="p">,</span> <span class="s">'Gene'</span><span class="p">);</span>
-<span class="k">my</span> <span class="nv">$gene</span> <span class="o">=</span> <span class="nv">$gene_adaptor</span><span class="o">-&gt;</span><span class="nv">fetch_by_stable_id</span><span class="p">(</span><span class="s">'ENSG00000198590'</span><span class="p">);</span>
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">my</span> <span class="nv">$gene_adaptor</span> <span class="o">=</span> <span class="nv">$registry</span><span class="o">-&gt;</span><span class="nv">get_adaptor</span><span class="p">('</span><span class="s1">Homo sapiens</span><span class="p">',</span> <span class="p">'</span><span class="s1">Core</span><span class="p">',</span> <span class="p">'</span><span class="s1">Gene</span><span class="p">');</span>
+<span class="k">my</span> <span class="nv">$gene</span> <span class="o">=</span> <span class="nv">$gene_adaptor</span><span class="o">-&gt;</span><span class="nv">fetch_by_stable_id</span><span class="p">('</span><span class="s1">ENSG00000198590</span><span class="p">');</span>
 </code></pre></div></div>
 
 <p>This gene object, then will be used to get transcripts and each transcript will be used to get exons and introns. We don’t have to generate more adaptors because when we obtain gene object, transcript adaptor is automatically generated. This is the same for exons (introns don’t have an adaptor because they are not stored separately in Ensembl databases). So, to get transcripts, we need to use “get_all_Transcripts” method in gene object:</p>
@@ -715,18 +716,12 @@ pre { padding: 1rem; }
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
@@ -1490,7 +1485,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>

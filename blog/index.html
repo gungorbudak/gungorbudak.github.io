@@ -462,6 +462,7 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
 </head>
 
   <body>
@@ -579,7 +580,6 @@ pre { padding: 1rem; }
 
         <p>Google Custom Search Engine is a great service when you have to implement a search functionality to as website and do not spend too much time. However, the default way of implementing it restricting us to have a certain search box design that might not blend well to our website. In this post, I’ll show how I found a workaround solution and actually implement on this very blog.</p>
 
-
         <p>
           <a href="/blog/2019/04/26/how-to-make-a-customizable-google-custom-search-engine-box/">Read more &rarr;</a>
         </p>
@@ -618,7 +618,6 @@ pre { padding: 1rem; }
 
         <p>Bootstrap 4 is a very handy library to generate quick web user interfaces for web pages and web applications. Search box is a very fundamental UI element if the web page is providing some content and in this post I’ll describe some styles that make a nice text input for search box.</p>
 
-
         <p>
           <a href="/blog/2018/12/12/bootstrap-4-search-box-with-search-icon/">Read more &rarr;</a>
         </p>
@@ -651,7 +650,6 @@ pre { padding: 1rem; }
 
 
         <p>Sambamba is a great utility to work with alignment file formats in bioinformatics such as BAM and CRAM. Follow below steps on any 64-bit Linux machine to install (this guide installs version <code class="highlighter-rouge">0.6.8</code> go to <a href="https://github.com/biod/sambamba/releases/" target="_blank">Sambamba releases page</a> for the most up-to-date version):</p>
-
 
         <p>
           <a href="/blog/2018/11/21/how-to-install-sambamba-on-linux/">Read more &rarr;</a>
@@ -691,7 +689,6 @@ pre { padding: 1rem; }
 
         <p>Image compression is mostly needed if you are short of storage on your devices or if you want to serve your images online and you want to optimize them in a way that we load fast which greatly affects how search engines evaluates your content and how users will enjoy your website.</p>
 
-
         <p>
           <a href="/blog/2018/10/11/easy-and-free-method-to-compress-images-on-macos-with-gui-and-terminal/">Read more &rarr;</a>
         </p>
@@ -724,7 +721,6 @@ pre { padding: 1rem; }
 
 
         <p>Use following script and command to quickly get the number of records/rows in the collections/tables in a database.</p>
-
 
         <p>
           <a href="/blog/2018/09/11/mongodb-listing-database-collections-tables-with-number-of-records-rows/">Read more &rarr;</a>
@@ -759,7 +755,6 @@ pre { padding: 1rem; }
 
         <p>Bioinformatics studies usually includes gene symbols as identifiers (IDs) as they are more recognizable comparing to other IDs such as Entrez IDs. However, certain analyses (tools) may not use gene symbols as there are usually more than one symbol so it is more difficult to implement a method to work with gene symbols. In such cases, you may need to do a conversion which is very common thing to do in bioinformatics.</p>
 
-
         <p>
           <a href="/blog/2018/08/07/convert-gene-symbols-to-entrez-ids-in-r/">Read more &rarr;</a>
         </p>
@@ -792,7 +787,6 @@ pre { padding: 1rem; }
 
 
         <p>You may have to keep both Python version, the old 2 and 3, at the same time due to your projects and they will require corresponding <code class="highlighter-rouge">pip</code> installation so you can separately install and maintain packages for both version.</p>
-
 
         <p>
           <a href="/blog/2018/08/02/correct-installation-and-configuration-of-pip2-and-pip3/">Read more &rarr;</a>
@@ -827,7 +821,6 @@ pre { padding: 1rem; }
 
         <p>Chrome’s new Developer Tools has a way to capture high quality full size screenshot of the page so you don’t have to have an extension for it anymore!</p>
 
-
         <p>
           <a href="/blog/2018/06/28/capture-full-size-screenshot-on-chrome-without-extension/">Read more &rarr;</a>
         </p>
@@ -860,7 +853,6 @@ pre { padding: 1rem; }
 
 
         <p>I had some issues installing Valgrind on macOS High Sierra and <a href="/blog/2018/04/28/how-to-install-valgrind-on-macos-high-sierra/" target="_blank">posted some tips to successfully install it to the system</a>. Although I could install the software this way, it didn’t work correctly after testing with with several real and dummy C++ codes. It was giving me a memory leak error even with an empty code. So, then I decided to use an Ubuntu 16.04 based Docker container to test the code within the container using the Ubuntu version of Valgrind.</p>
-
 
         <p>
           <a href="/blog/2018/06/13/memory-leak-testing-with-valgrind-on-macos-using-docker-containers/">Read more &rarr;</a>
@@ -895,7 +887,6 @@ pre { padding: 1rem; }
 
         <p>hg38/GRCh38 is the latest human reference genome as of today which was released December, 2013. There are multiple sources for downloading it and also it comes in different versions.</p>
 
-
         <p>
           <a href="/blog/2018/05/16/how-to-download-hg38-grch38-fasta-human-reference-genome/">Read more &rarr;</a>
         </p>
@@ -916,7 +907,7 @@ pre { padding: 1rem; }
           
           
             <li class="page-item">
-              <a class="page-link" href="/blog/page/2/">Older &rarr;</a>
+              <a class="page-link" href="/blog/page/2/index.html">Older &rarr;</a>
             </li>
           
         </ul>
@@ -936,18 +927,12 @@ pre { padding: 1rem; }
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
@@ -1703,7 +1688,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>

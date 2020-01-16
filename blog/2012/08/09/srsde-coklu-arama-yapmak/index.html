@@ -464,6 +464,7 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
 </head>
 
   <body>
@@ -590,22 +591,22 @@ pre { padding: 1rem; }
 
 <p>Bunu azaltmak icin inceleme scriptini tamamen degistirdim. Oncelikle her zaman oldugu gibi esik degerini gecenleri aliyor ama direkt bunlarin ID numaralarini bir dizide (array) listeliyorum. Daha sonra bu listenin herbir elemanini boru karakteri ile ayirarak bir string haline getiriyorum. Son olarak bu stringi direkt getz komutuyla SRS’de aratip, tek seferde tum sayfada esik degerini gecen organizmalarin isimlerini alip, bunlari tek tek okuyup ayirarak hash icinde sakliyorum.</p>
 
-<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nv">@params</span> <span class="o">=</span> <span class="nv">$blast_obj</span><span class="o">-&gt;</span><span class="nv">next_alignment</span><span class="p">(</span><span class="nv">fields</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'identity'</span><span class="p">,</span> <span class="s">'overlap'</span><span class="p">]))</span> <span class="p">{</span>
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="nv">@params</span> <span class="o">=</span> <span class="nv">$blast_obj</span><span class="o">-&gt;</span><span class="nv">next_alignment</span><span class="p">(</span><span class="nv">fields</span> <span class="o">=&gt;</span> <span class="p">['</span><span class="s1">name</span><span class="p">',</span> <span class="p">'</span><span class="s1">identity</span><span class="p">',</span> <span class="p">'</span><span class="s1">overlap</span><span class="p">']))</span> <span class="p">{</span>
         <span class="nv">$overlap_seen</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
         <span class="nv">$mismatch_seen</span> <span class="o">=</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="nv">$overlap_seen</span> <span class="o">&gt;=</span> <span class="nv">$overlap_threshold</span> <span class="ow">and</span> <span class="nv">$mismatch_seen</span> <span class="o">&lt;=</span> <span class="nv">$mismatch_threshold</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nv">$database</span> <span class="ow">eq</span> <span class="s">"refseq_dna"</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$database</span> <span class="ow">eq</span> <span class="p">"</span><span class="s2">refseq_dna</span><span class="p">")</span> <span class="p">{</span>
                 <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=~</span> <span class="sr">/:([A-Z|0-9]*\_[A-Z|0-9]*)/</span><span class="p">;</span>
                 <span class="nb">push</span><span class="p">(</span><span class="nv">@names</span><span class="p">,</span> <span class="nv">$1</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="nv">$ids</span> <span class="o">=</span> <span class="nb">join</span><span class="p">(</span><span class="s">"|"</span><span class="p">,</span> <span class="nv">@names</span><span class="p">);</span>
+    <span class="nv">$ids</span> <span class="o">=</span> <span class="nb">join</span><span class="p">("</span><span class="s2">|</span><span class="p">",</span> <span class="nv">@names</span><span class="p">);</span>
 
-    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="nv">$ids</span> <span class="ow">eq</span> <span class="s">""</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="nb">open</span> <span class="p">(</span><span class="nv">PIPE</span><span class="p">,</span> <span class="s">"getz '[$database:$ids]' -vf 'ORGANISM' |"</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="p">(</span><span class="nv">$ids</span> <span class="ow">eq</span> <span class="p">"")</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nb">open</span> <span class="p">(</span><span class="nv">PIPE</span><span class="p">,</span> <span class="p">"</span><span class="s2">getz '[</span><span class="si">$database</span><span class="s2">:</span><span class="si">$ids</span><span class="s2">]' -vf 'ORGANISM' |</span><span class="p">")</span> <span class="ow">or</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
         <span class="k">while</span><span class="p">(</span><span class="k">my</span> <span class="nv">$line</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nv">PIPE</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$line</span> <span class="o">=~</span> <span class="sr">/\t(.*)/</span><span class="p">;</span>
             <span class="nv">$organism_names</span><span class="p">{</span><span class="nv">$1</span><span class="p">}</span><span class="o">++</span><span class="p">;</span>
@@ -678,18 +679,12 @@ pre { padding: 1rem; }
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
@@ -1453,7 +1448,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>

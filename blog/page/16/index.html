@@ -462,6 +462,7 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
 </head>
 
   <body>
@@ -584,7 +585,6 @@ pre { padding: 1rem; }
 
         <p>7. Sağlık Enformatiği ve Biyoenformatik üzerine Uluslararası Sempozyumu, <em>7th International Symposium on Health Informatics and Bioinformatics (HIBIT 2012)</em>, ilk kez 2005’te ODTÜ Enformatik Enstitüsü tarafından düzenlenmiş ve Sağlık Enformatiği, Tıbbi Enformatik, Hesaplamalı Biyoloji ve Biyoenformatik alanlarında akademisyenleri ve araştırmacıları bir araya getirmeyi ve bu alanlar hakkında yapılan çalışmaların sunulmasına ortam sağlamayı ve çalışmalar üzerine interaktif bir şekilde değerlendirmeler yapmayı amaçlamaktadır.</p>
 
-
         <p>
           <a href="/blog/2012/03/17/7th-international-symposium-on-health/">Read more &rarr;</a>
         </p>
@@ -628,7 +628,6 @@ pre { padding: 1rem; }
 
         <p>Birçok organizmanın ve son olarak da 2001’de insan genomunun çıkarılmasıyla, tüm 3 milyar baz çiftinin diziliminin elde edilmesiyle, karşımıza bu bilgiyi farklı şekillerde kullanacak olan alanlar çıktı.Bu genleri anlamaya çalışan, bu genlerden oluşacak proteinleri belirlemeye çalışan alanların yanında bu bilginin analizini yapma ihtiyacı da Biyoenformatik alanını doğurdu.</p>
 
-
         <p>
           <a href="/blog/2012/03/16/biyoenformatik-nedir-biyoenformatikin-tanimi/">Read more &rarr;</a>
         </p>
@@ -662,7 +661,6 @@ pre { padding: 1rem; }
 
         <p>Merhabalar,</p>
 
-
         <p>
           <a href="/blog/2012/03/16/hos-geldim-hos-geldiniz/">Read more &rarr;</a>
         </p>
@@ -688,7 +686,7 @@ pre { padding: 1rem; }
         <ul class="pagination justify-content-center">
           
             <li class="page-item">
-              <a class="page-link" href="/blog/page/15/">&larr; Newer</a>
+              <a class="page-link" href="/blog/page/15/index.html">&larr; Newer</a>
             </li>
           
           
@@ -713,18 +711,12 @@ pre { padding: 1rem; }
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
@@ -1488,7 +1480,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>

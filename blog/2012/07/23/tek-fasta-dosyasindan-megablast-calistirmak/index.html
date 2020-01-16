@@ -464,6 +464,7 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
 </head>
 
   <body>
@@ -604,9 +605,9 @@ pre { padding: 1rem; }
     <span class="k">if</span> <span class="p">(</span><span class="nv">$line</span> <span class="o">=~</span> <span class="sr">/^&gt;(\w+$sp)\s/</span><span class="p">){</span>
 
         <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$1</span><span class="p">;</span>
-        <span class="nv">$input</span> <span class="o">=</span> <span class="nv">$fasta</span><span class="o">.</span><span class="s">"["</span><span class="o">.</span><span class="nv">$name</span><span class="o">.</span><span class="s">"]"</span><span class="p">;</span>
+        <span class="nv">$input</span> <span class="o">=</span> <span class="nv">$fasta</span><span class="o">.</span><span class="p">"</span><span class="s2">[</span><span class="p">"</span><span class="o">.</span><span class="nv">$name</span><span class="o">.</span><span class="p">"</span><span class="s2">]</span><span class="p">";</span>
 
-        <span class="nb">system</span><span class="p">(</span><span class="s">"megablast $input $database -OUTFILE=megablast/$name.megablast -nobatch -d"</span><span class="p">);</span>
+        <span class="nb">system</span><span class="p">("</span><span class="s2">megablast </span><span class="si">$input</span><span class="s2"> </span><span class="si">$database</span><span class="s2"> -OUTFILE=megablast/</span><span class="si">$name</span><span class="s2">.megablast -nobatch -d</span><span class="p">");</span>
 
         <span class="nv">$sp</span><span class="o">++</span><span class="p">;</span>
         <span class="k">last</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$sp</span> <span class="o">==</span> <span class="nv">$n</span><span class="p">);</span>
@@ -633,7 +634,7 @@ pre { padding: 1rem; }
 
 <p>Duzenli ifadelerle bu tarz karsilastirma yapmanin bircok yolu var. Bunlari baska bir yaziyla ya da yazi dizisiyle paylasmak istiyorum.</p>
 
-<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">system</span><span class="p">(</span><span class="s">"blastplus -programname=megablast $input $database -OUTFILE=megablast/$name.megablast -nofilter -nobatch -d"</span><span class="p">);</span>
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">system</span><span class="p">("</span><span class="s2">blastplus -programname=megablast </span><span class="si">$input</span><span class="s2"> </span><span class="si">$database</span><span class="s2"> -OUTFILE=megablast/</span><span class="si">$name</span><span class="s2">.megablast -nofilter -nobatch -d</span><span class="p">");</span>
 </code></pre></div></div>
 
 <p>Devaminda system komutu ile megablasti calistiriyorum. Ek olarak kullandigim parametreler, “-nofilter” (tekrar eden dizileri maskelemesin diye) ve “-nobatch”.</p>
@@ -702,18 +703,12 @@ pre { padding: 1rem; }
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
@@ -1477,7 +1472,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>

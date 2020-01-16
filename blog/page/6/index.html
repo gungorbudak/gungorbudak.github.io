@@ -462,6 +462,7 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
 </head>
 
   <body>
@@ -584,7 +585,6 @@ pre { padding: 1rem; }
 
         <p><a href="http://mezzanine.jupo.org/">Mezzanine</a> is a CMS application built on Django web framework. The installation steps are easy but your environment may not just suitable enough for it work without a problem. So, here I’m going to describe complete installation from scratch on a virtual environment.</p>
 
-
         <p>
           <a href="/blog/2015/05/01/how-to-install-mezzanine-on-ubuntulinux-mint/">Read more &rarr;</a>
         </p>
@@ -628,7 +628,6 @@ pre { padding: 1rem; }
 
         <p>Let’s say you created a Django app and ran <code class="highlighter-rouge">python manage.py syncdb</code> and created its table. Everytime you make a change in the table, you’ll need to drop that table and run <code class="highlighter-rouge">python manage.py syncdb</code> again to update. And how you drop a table of a Django app:</p>
 
-
         <p>
           <a href="/blog/2015/04/13/how-to-clear-or-drop-db-table-of-a-django-app/">Read more &rarr;</a>
         </p>
@@ -661,7 +660,6 @@ pre { padding: 1rem; }
 
 
         <p>We’re almost done with the analyses and we’re making the final visualization of the network. <a href="http://biyoenformatik.blogspot.com.tr/2015/01/network-clustering-with-neat-rnsc.html" target="_blank">As I previously posted</a>, the network was clustered and visualized by time points. After that, we have done several more analyses and here I report how we visualized them. I’m going to post more about how we did the analyses separately.</p>
-
 
         <p>
           <a href="/blog/2015/01/21/salmonella-host-interaction-network/">Read more &rarr;</a>
@@ -706,7 +704,6 @@ pre { padding: 1rem; }
 
         <p>Assume you have a large network and you want to find k-cores of each node and also you want to compute clustering coefficient for each one. Python package <a href="http://networkx.github.io/" target="_blank">NetworkX</a> comes with very nice methods for you to easily do these.</p>
 
-
         <p>
           <a href="/blog/2015/01/16/finding-k-cores-and-clustering/">Read more &rarr;</a>
         </p>
@@ -739,7 +736,6 @@ pre { padding: 1rem; }
 
 
         <p>In my previous post, I mentioned how I clustered the network we obtained at the end. For functional annotation gene ontology (GO) enrichment has been done on these clusters.</p>
-
 
         <p>
           <a href="/blog/2015/01/16/go-enrichment-of-network-clusters/">Read more &rarr;</a>
@@ -774,7 +770,6 @@ pre { padding: 1rem; }
 
         <p>As we have obtained proteins at different times points from the experimental data, then we have found intermediate nodes (from human interactome) using PCSF algorithm and finally with a special matrix from the network that PCSF created, we have validated the edges and also determined edge directions using <a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;arnumber=6560041&amp;url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F8857%2F6679566%2F06560041.pdf%3Farnumber%3D6560041" target="_blank">an approach which a divide and conquer (ILP) approach for construction of large-scale signaling networks from PPI data</a>. The resulting network is a directed network and will be used and visualized for further analyses.</p>
 
-
         <p>
           <a href="/blog/2015/01/16/network-clustering-with-neat-rnsc/">Read more &rarr;</a>
         </p>
@@ -807,7 +802,6 @@ pre { padding: 1rem; }
 
 
         <p>Open reading frames (ORF) are regions on DNA which are translated into protein. They are in between start and stop codons and they are usually long.</p>
-
 
         <p>
           <a href="/blog/2015/01/14/searching-open-reading-frames-orf-in/">Read more &rarr;</a>
@@ -842,7 +836,6 @@ pre { padding: 1rem; }
 
         <p>After fold changes were obtained and HGNC names were found for each phosphopeptide, these were used to construct Salmonella signaling network using PCSF and then with the nodes that PCSF found as well, we generated a matrix which has node in the rows and time points in the columns and each cell shows the presence of corresponding protein under the corresponding time point(s).</p>
 
-
         <p>
           <a href="/blog/2015/01/14/reconstructed-salmonella-signaling/">Read more &rarr;</a>
         </p>
@@ -875,7 +868,6 @@ pre { padding: 1rem; }
 
 
         <p>Here is a quick Python trick you might use in your code.</p>
-
 
         <p>
           <a href="/blog/2015/01/13/python-get-longest-string-in-list/">Read more &rarr;</a>
@@ -910,7 +902,6 @@ pre { padding: 1rem; }
 
         <p>Most of the time, when you need to work on large data, you’ll have to use some dictionaries in Python. Dictionaries of lists are very useful to store large data in very organized way. You can always initiate them by initiating empty lists inside an empty dictionary but when you don’t know how many of them you’ll end up with and if you want an easier option, use <code class="highlighter-rouge">defaultdict(list)</code>. You just need to import it, first:</p>
 
-
         <p>
           <a href="/blog/2015/01/12/python-defaultdictlist-dictionary-of/">Read more &rarr;</a>
         </p>
@@ -926,12 +917,12 @@ pre { padding: 1rem; }
         <ul class="pagination justify-content-center">
           
             <li class="page-item">
-              <a class="page-link" href="/blog/page/5/">&larr; Newer</a>
+              <a class="page-link" href="/blog/page/5/index.html">&larr; Newer</a>
             </li>
           
           
             <li class="page-item">
-              <a class="page-link" href="/blog/page/7/">Older &rarr;</a>
+              <a class="page-link" href="/blog/page/7/index.html">Older &rarr;</a>
             </li>
           
         </ul>
@@ -951,18 +942,12 @@ pre { padding: 1rem; }
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
@@ -1726,7 +1711,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>

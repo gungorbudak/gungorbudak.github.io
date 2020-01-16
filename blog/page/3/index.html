@@ -462,6 +462,7 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
 </head>
 
   <body>
@@ -584,7 +585,6 @@ pre { padding: 1rem; }
 
         <p>ODTÜ Enformatik Enstitüsü kuruluşunun 20. yılını bir bilim festivaliyle kutluyor. <strong>16 Mayıs 2016</strong>‘da, <strong>ODTÜ Kültür ve Kongre Merkezi</strong>‘nde gerçekleştirilecek olan bilim festivaline herkes davetlidir!</p>
 
-
         <p>
           <a href="/blog/2016/05/10/odtu-enformatik-enstitusunun-20-yili-etkinligi/">Read more &rarr;</a>
         </p>
@@ -628,7 +628,6 @@ pre { padding: 1rem; }
 
         <p>Currently Javascript is really poor in statistical methods compared to Python (SciPy) and R. There are several efforts to fill this gap, most notably from <a href="http://jstat.github.io/" target="_blank">jStat</a>. However, still many functions, distributions and tests are missing in this library. In one of my projects, I had to implement a Javascript version of Mann Whitney U test (or also called Wilcoxon rank-sum test). Here, I’m giving a link to its source code and describing how it works.</p>
 
-
         <p>
           <a href="/blog/2016/01/16/mann-whitney-u-test-wilcoxon-rank-sum-test-javascript/">Read more &rarr;</a>
         </p>
@@ -661,7 +660,6 @@ pre { padding: 1rem; }
 
 
         <p>MiClip is a CLIP-seq data peak calling algorithm implemented in R but currently it doesn’t show up in the CRAN but you can obtain it from the archive and install from the source or tar.gz file.</p>
-
 
         <p>
           <a href="/blog/2015/10/29/miclip-13-installation/">Read more &rarr;</a>
@@ -706,7 +704,6 @@ pre { padding: 1rem; }
 
         <p>The latest release of RDKit (2015-03) can generate SVG images with several lines of codes but by default the generated SVG image has a white background. The investigations on sources didn’t solve my problem as I couldn’t find any option for setting background to transparent background.</p>
 
-
         <p>
           <a href="/blog/2015/09/16/generating-2d-svg-images-of-mol-files/">Read more &rarr;</a>
         </p>
@@ -739,7 +736,6 @@ pre { padding: 1rem; }
 
 
         <p><a href="http://cairographics.org/" target="_blank">Cairo</a> is a 2D graphics library implemented as a library written in the C programming language but if you’d like to use Python programming language, you should also install <a href="http://cairographics.org/pycairo/" target="_blank">Python bindings for Cairo</a>.</p>
-
 
         <p>
           <a href="/blog/2015/09/16/install-cairo-graphics-and-pycairo-on/">Read more &rarr;</a>
@@ -774,7 +770,6 @@ pre { padding: 1rem; }
 
         <p><a href="http://www.rdkit.org/" target="_blank">RDKit</a> is an open source toolkit for cheminformatics. It has <a href="http://www.rdkit.org/docs/Overview.html#functionality-overview" target="_blank">many functionalities</a> to work with chemical files.</p>
 
-
         <p>
           <a href="/blog/2015/09/16/install-rdkit-2015-03-build-on-ubuntu/">Read more &rarr;</a>
         </p>
@@ -807,7 +802,6 @@ pre { padding: 1rem; }
 
 
         <p><a href="http://openbabel.org/wiki/Main_Page" target="_blank">Open Babel</a> is a tool to work with molecular data in any way from converting one type to another, analyzing, molecular modeling, etc. It also has a method to convert MOL files into SVG or PNG images to represent them as 2D images.</p>
-
 
         <p>
           <a href="/blog/2015/08/30/generating-2d-images-of-molecules-from/">Read more &rarr;</a>
@@ -842,7 +836,6 @@ pre { padding: 1rem; }
 
         <p><a href="https://docs.python.org/2/library/subprocess.html" target="_blank">subprocess</a> module in Python provides us a variety of methods to start a process from a Python script. We may use these methods to run an external commands / programs, collect their output and manage them. An example use of it might be as following:</p>
 
-
         <p>
           <a href="/blog/2015/08/30/simple-way-of-pythons-subprocesspopen/">Read more &rarr;</a>
         </p>
@@ -875,7 +868,6 @@ pre { padding: 1rem; }
 
 
         <p>StarCluster loadbalancer command is regularly monitors the jobs in queue and it adds or removes nodes to the master node that is created beforehand to effectively complete the queue.</p>
-
 
         <p>
           <a href="/blog/2015/08/16/running-starcluster-load-balancer-in-background-in/">Read more &rarr;</a>
@@ -910,7 +902,6 @@ pre { padding: 1rem; }
 
         <p>I was getting errors from StarCluster run due to not being able to find <code class="highlighter-rouge">.starcluster</code> directory in <code class="highlighter-rouge">/var/www/</code>.</p>
 
-
         <p>
           <a href="/blog/2015/08/15/change-apaches-default-user-www-data-or-home/">Read more &rarr;</a>
         </p>
@@ -926,12 +917,12 @@ pre { padding: 1rem; }
         <ul class="pagination justify-content-center">
           
             <li class="page-item">
-              <a class="page-link" href="/blog/page/2/">&larr; Newer</a>
+              <a class="page-link" href="/blog/page/2/index.html">&larr; Newer</a>
             </li>
           
           
             <li class="page-item">
-              <a class="page-link" href="/blog/page/4/">Older &rarr;</a>
+              <a class="page-link" href="/blog/page/4/index.html">Older &rarr;</a>
             </li>
           
         </ul>
@@ -951,18 +942,12 @@ pre { padding: 1rem; }
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
@@ -1726,7 +1711,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>

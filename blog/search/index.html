@@ -464,6 +464,9 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
+    <script async src="https://cse.google.com/cse.js?cx=partner-pub-3172715384615423:9160510939"></script>
+  
 </head>
 
   <body>
@@ -554,11 +557,17 @@ pre { padding: 1rem; }
     </div>
 </div>
 
-<h2 class="text-center mb-5">
-  Search Results
-</h2>
-
-<form method="get" action="/blog/search/" class="blog-search-form">
+<div class="row">
+  <div class="col-md-8">
+    <h2 class="mb-5">
+      Search Results
+    </h2>
+    <div class="gcse-searchresults-only"></div>
+  </div>
+  <div class="col-md-4">
+    <aside>
+    <section>
+      <form method="get" action="/blog/search/" class="blog-search-form">
   <div class="input-group">
     <input type="text" class="form-control" name="q" placeholder="Search this blog" />
     <div class="input-group-append">
@@ -568,37 +577,747 @@ pre { padding: 1rem; }
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
   }
 </script>
 
-<script>
-  (function() {
-    var cx = 'partner-pub-3172715384615423:9160510939';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
+    </section>
 
-<gcse:searchresults-only></gcse:searchresults-only>
+    <section>
+        <h5 class="sidebar-title text-muted">Recent Posts</h5>
+        <ul class="sidebar-list">
+    
+        <li>
+            <a href="/blog/2019/04/26/how-to-make-a-customizable-google-custom-search-engine-box/">How to Make a Customizable Google Custom Search Engine Box</a>
+            <br />
+            <span class="text-muted">
+              <i class="far fa-calendar-alt"></i>
+              Fri, Apr 26, 2019
+            </span>
+        </li>
+    
+        <li>
+            <a href="/blog/2018/12/12/bootstrap-4-search-box-with-search-icon/">Bootstrap 4 Search Box with Search Icon</a>
+            <br />
+            <span class="text-muted">
+              <i class="far fa-calendar-alt"></i>
+              Wed, Dec 12, 2018
+            </span>
+        </li>
+    
+        <li>
+            <a href="/blog/2018/11/21/how-to-install-sambamba-on-linux/">How to Install Sambamba on Linux</a>
+            <br />
+            <span class="text-muted">
+              <i class="far fa-calendar-alt"></i>
+              Wed, Nov 21, 2018
+            </span>
+        </li>
+    
+        <li>
+            <a href="/blog/2018/10/11/easy-and-free-method-to-compress-images-on-macos-with-gui-and-terminal/">Easy and Free Method to Compress Images on macOS with GUI and Terminal</a>
+            <br />
+            <span class="text-muted">
+              <i class="far fa-calendar-alt"></i>
+              Thu, Oct 11, 2018
+            </span>
+        </li>
+    
+        <li>
+            <a href="/blog/2018/09/11/mongodb-listing-database-collections-tables-with-number-of-records-rows/">MongoDB Listing Database Collections/Tables with Number of Records/Rows</a>
+            <br />
+            <span class="text-muted">
+              <i class="far fa-calendar-alt"></i>
+              Tue, Sep 11, 2018
+            </span>
+        </li>
+    
+</ul>
+
+    </section>
+
+    <section>
+        <!-- gungorbudakcom-blog-sidebar-1 -->
+<ins class="adsbygoogle" style="display:block; margin-bottom: 1rem;" data-ad-client="ca-pub-3172715384615423" data-ad-slot="9665444172" data-ad-format="auto"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    </section>
+
+    <section>
+      <h5 class="sidebar-title text-muted">Archives</h5>
+      
+      <ul class="sidebar-list">
+      
+        <li>
+          <a href="/blog/archive/2019/">2019</a> (1)
+        </li>
+      
+        <li>
+          <a href="/blog/archive/2018/">2018</a> (12)
+        </li>
+      
+        <li>
+          <a href="/blog/archive/2017/">2017</a> (6)
+        </li>
+      
+        <li>
+          <a href="/blog/archive/2016/">2016</a> (3)
+        </li>
+      
+        <li>
+          <a href="/blog/archive/2015/">2015</a> (41)
+        </li>
+      
+        <li>
+          <a href="/blog/archive/2014/">2014</a> (14)
+        </li>
+      
+        <li>
+          <a href="/blog/archive/2013/">2013</a> (43)
+        </li>
+      
+        <li>
+          <a href="/blog/archive/2012/">2012</a> (33)
+        </li>
+      
+      </ul>
+    </section>
+
+    
+    <section>
+        <h5 class="sidebar-title text-muted">Tags</h5>
+        
+        
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/python/" rel="tag">python</a> (27)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/dream-challenge/" rel="tag">dream challenge</a> (18)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/network-inference/" rel="tag">network inference</a> (18)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/megablast/" rel="tag">megablast</a> (17)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/perl/" rel="tag">perl</a> (17)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/ubuntu/" rel="tag">ubuntu</a> (16)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/fasta/" rel="tag">fasta</a> (13)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/django/" rel="tag">django</a> (12)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/fastq/" rel="tag">fastq</a> (11)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/network/" rel="tag">network</a> (11)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/r/" rel="tag">r</a> (11)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/r-programming/" rel="tag">r programming</a> (10)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/husar/" rel="tag">husar</a> (9)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/in-silico/" rel="tag">in silico</a> (9)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/hpn-dream/" rel="tag">hpn-dream</a> (8)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/php/" rel="tag">php</a> (8)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/amazon/" rel="tag">amazon</a> (7)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/aws/" rel="tag">aws</a> (7)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/biyoenformatik/" rel="tag">biyoenformatik</a> (7)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/dkfz/" rel="tag">dkfz</a> (7)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/mezzanine/" rel="tag">mezzanine</a> (7)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/mysql/" rel="tag">mysql</a> (7)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/breast-cancer/" rel="tag">breast cancer</a> (6)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/bwa/" rel="tag">bwa</a> (6)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/data-derived-network/" rel="tag">data-derived network</a> (6)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/bioinformatics/" rel="tag">bioinformatics</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/database/" rel="tag">database</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/eşleşmeyen-okuma/" rel="tag">eşleşmeyen okuma</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/human/" rel="tag">human</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/install/" rel="tag">install</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/laravel/" rel="tag">laravel</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/ncbi/" rel="tag">ncbi</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/pipeline/" rel="tag">pipeline</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/salmonella/" rel="tag">salmonella</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/script/" rel="tag">script</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-5">
+                <a class="tag-link" href="/blog/tag/sif/" rel="tag">sif</a> (5)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/causal-edge/" rel="tag">causal edge</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/cellnoptr/" rel="tag">cellnoptr</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/clustering/" rel="tag">clustering</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/cytoscape/" rel="tag">cytoscape</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/ensembl/" rel="tag">ensembl</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/eşleşen-okuma/" rel="tag">eşleşen okuma</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/hgnc/" rel="tag">hgnc</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/insan-genomu/" rel="tag">insan genomu</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/midas/" rel="tag">midas</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/refseq/" rel="tag">refseq</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/srs/" rel="tag">srs</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/ssh/" rel="tag">ssh</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/unix/" rel="tag">unix</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/visualization/" rel="tag">visualization</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-4">
+                <a class="tag-link" href="/blog/tag/windows/" rel="tag">windows</a> (4)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/apache2/" rel="tag">apache2</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/bam/" rel="tag">bam</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/bash/" rel="tag">bash</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/bigcat/" rel="tag">bigcat</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/blast/" rel="tag">blast</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/csv/" rel="tag">csv</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/david/" rel="tag">david</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/düzenli-ifadeler/" rel="tag">düzenli ifadeler</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/ensembl-api/" rel="tag">ensembl api</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/erasmus/" rel="tag">erasmus</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/geany/" rel="tag">geany</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/getz/" rel="tag">getz</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/hash/" rel="tag">hash</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/lenovo/" rel="tag">lenovo</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/macos/" rel="tag">macos</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/modeling/" rel="tag">modeling</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/pcsf/" rel="tag">pcsf</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/permission-denied/" rel="tag">permission denied</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/reconstruction/" rel="tag">reconstruction</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/rosetta/" rel="tag">rosetta</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/rppa/" rel="tag">rppa</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/signaling/" rel="tag">signaling</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/text-editor/" rel="tag">text editor</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/translation/" rel="tag">translation</a> (3)
+            </span>
+        
+            
+            
+            
+            
+            <span class="tag-size-3">
+                <a class="tag-link" href="/blog/tag/xls/" rel="tag">xls</a> (3)
+            </span>
+        
+    </section>
+    
+
+    <section>
+        <!-- gungorbudakcom-blog-sidebar-2 -->
+<ins class="adsbygoogle" style="display:block; margin-top: 1rem;" data-ad-client="ca-pub-3172715384615423" data-ad-slot="3120891827" data-ad-format="auto"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    </section>
+</aside>
+
+  </div>
+</div>
 
       </main>
       <footer>
@@ -619,7 +1338,7 @@ pre { padding: 1rem; }
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>

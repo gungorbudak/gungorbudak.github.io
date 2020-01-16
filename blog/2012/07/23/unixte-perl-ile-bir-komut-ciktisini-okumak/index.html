@@ -464,6 +464,7 @@ pre { padding: 1rem; }
   
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
+  
 </head>
 
   <body>
@@ -599,13 +600,13 @@ OC   Salmoniformes<span class="p">;</span> Salmonidae<span class="p">;</span> Sa
 
 <p>Ilk satirda, organizmanin tur ismini ve parantez icinde de yaygin olarak kullanilan ismini goruyoruz. Ayrica TAB, “\t”, ile birlikte basinda “OS” karakterleri bulunuyor. Iste bu ciktiyi Perl’de sanki bir dosya okuyormus gibi bir dongu icinde okuyarak, ilk satiri ve ilk satirdan da sadece tur ismini alacagiz.</p>
 
-<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elsif</span> <span class="p">(</span><span class="nv">$database</span> <span class="ow">eq</span> <span class="s">"emblall"</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elsif</span> <span class="p">(</span><span class="nv">$database</span> <span class="ow">eq</span> <span class="p">"</span><span class="s2">emblall</span><span class="p">")</span> <span class="p">{</span>
     <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=~</span> <span class="sr">/:([A-Z|0-9]*)\_?/</span><span class="p">;</span>
     <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$1</span><span class="p">;</span>
-    <span class="nb">open</span> <span class="p">(</span><span class="nv">PIPE</span><span class="p">,</span> <span class="s">"getz '[$database:$params[0]]' -f 'ORGANISM' |"</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
+    <span class="nb">open</span> <span class="p">(</span><span class="nv">PIPE</span><span class="p">,</span> <span class="p">"</span><span class="s2">getz '[</span><span class="si">$database</span><span class="s2">:</span><span class="si">$params</span><span class="s2">[0]]' -f 'ORGANISM' |</span><span class="p">")</span> <span class="ow">or</span> <span class="nb">die</span> <span class="vg">$!</span><span class="p">;</span>
     <span class="k">while</span><span class="p">(</span><span class="k">my</span> <span class="nv">$line</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nv">PIPE</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
         <span class="nv">$line</span> <span class="o">=~</span> <span class="sr">/^OS\s+(\w+)\s+(\w+)/</span><span class="p">;</span>
-        <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">"$1 $2"</span><span class="p">;</span>
+        <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">"</span><span class="s2">$1 $2</span><span class="p">";</span>
         <span class="p">}</span>
     <span class="nb">close</span> <span class="nv">PIPE</span><span class="p">;</span>
     <span class="p">}</span>
@@ -677,18 +678,12 @@ OC   Salmoniformes<span class="p">;</span> Salmonidae<span class="p">;</span> Sa
     </div>
   </div>
 </form>
+
 <script type="text/javascript">
-  document.querySelector('.blog-search-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var q = document.querySelector('input[name="q"]').value;
-    if (q.length > 0) {
-      window.open('/blog/search/#gsc.q=' + q, '_self');
-    }
-  });
-  if (window.location.hash.length > 0) {
-    var q = window.location.hash.substring(1).split('&').filter(function(v) {
-      return v.substring(0, 6) === 'gsc.q=';
-    })[0].substring(6);
+  if (window.location.search.length > 0) {
+    var q = window.location.search.substring(1).split('&').filter(function(x) {
+      return x.substring(0, 2) === 'q=';
+    })[0].substring(2);
     if (q.length > 0) {
       document.querySelector('input[name="q"]').value = q;
     }
@@ -1452,7 +1447,7 @@ OC   Salmoniformes<span class="p">;</span> Salmonidae<span class="p">;</span> Sa
     </div>
 
     <div class="p-3 text-muted">
-      &copy; <time datetime="2019-08-19T15:37:50+03:00">2019</time>. Güngör Budak
+      &copy; <time datetime="2020-01-16T11:05:25+03:00">2020</time>. Güngör Budak
     </div>
     
   </div>
